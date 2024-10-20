@@ -1,8 +1,10 @@
+"""MongoDB service to interact with the database."""
+import os
 from datetime import datetime
 from pymongo import MongoClient
 
 # MongoDB setup
-mongo_client = MongoClient("mongodb://mongo:27017/")
+mongo_client = MongoClient(os.getenv("MONGO_URI"))
 db = mongo_client.mydatabase
 
 # Ensure collections exist or create them

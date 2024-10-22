@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Main routes for the Flask app."""
 from io import BytesIO
 import logging

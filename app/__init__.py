@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Initialize Flask app."""
 from flask import Flask
 from flask_cors import CORS

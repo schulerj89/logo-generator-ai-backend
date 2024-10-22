@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """OpenAI service to generate prompts and images using OpenAI's DALL-E and Chat models."""
 import os
 import json

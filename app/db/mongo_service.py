@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """MongoDB service to interact with the database."""
 import os
 from datetime import datetime

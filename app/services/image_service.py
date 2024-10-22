@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Image processing service."""
 import uuid
 from io import BytesIO

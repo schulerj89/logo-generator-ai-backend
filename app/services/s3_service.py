@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Service for uploading images to S3 bucket."""
 import os
 from io import BytesIO

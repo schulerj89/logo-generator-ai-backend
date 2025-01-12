@@ -16,7 +16,7 @@ def generate_random_prompts():
     completions = openai_client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
-            {"role": "system", "content": "You are an expert at generating prompts for Dall-E in JSON. Create 3 different prompts for a user to choose from for a fantasy football mascot logo, ensure you leverage actual mascots from NFL, college or high school teams. Should just be a few words and put it in json format: ['prompt 1', 'prompt 2', 'prompt 3']"}
+            {"role": "system", "content": "You are an expert at generating prompts for Dall-E in JSON. Create 3 different prompts for a user to choose from for a fantasy sports mascot logo, ensure you leverage actual mascots from NFL, NBA, NHL, college or high school teams. Should just be a few words and put it in json format: ['prompt 1', 'prompt 2', 'prompt 3']"}
         ]
     )
 
@@ -39,7 +39,7 @@ def generate_image_prompt(user_prompt):
     appropriate_completion = openai_client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
-            {"role": "system", "content": "You are an expert at making sure prompts use the appropriate language and fixing them for a fantasy football mascot prompt. If you received a prompt that is not appropriate, fix it into a fantasy football mascot prompt. If you are unable to please return with 'Error: Inappropriate Prompt' and the reason why."},
+            {"role": "system", "content": "You are an expert at making sure prompts use the appropriate language and fixing them for a fantasy sports mascot prompt. If you received a prompt that is not appropriate, fix it into a fantasy sports mascot prompt. If you are unable to please return with 'Error: Inappropriate Prompt' and the reason why."},
             {"role": "user", "content": user_prompt}
         ]
     )
@@ -50,12 +50,12 @@ def generate_image_prompt(user_prompt):
         logging.info("Error: Inappropriate Prompt: %s", appropriate_answer)
         raise InappropriatePromptException(f"Error: Inappropriate Prompt: {appropriate_answer}")
 
-    prompt = user_prompt + ". Do not include any text. Football Mascot Type Logo. Strictly always use a white background."
+    prompt = user_prompt + ". Do not include any text. Sports Mascot Type Logo. Strictly always use a white background."
 
     completion = openai_client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
-            {"role": "system", "content": "You are an expert at creating prompts for Dall-E. Update the prompt you received so that it is more specific and detailed and used so a user can create a fantasy football logo. Make sure to always use a white background."},
+            {"role": "system", "content": "You are an expert at creating prompts for Dall-E. Update the prompt you received so that it is more specific and detailed and used so a user can create a fantasy sports logo. Make sure to always use a white background."},
             {"role": "user", "content": prompt}
         ]
     )

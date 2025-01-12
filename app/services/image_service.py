@@ -36,3 +36,4 @@ def process_image(image_url):
     unique_filename = f"{uuid.uuid4()}.png"
 
     return image_resized, unique_filename
+    
